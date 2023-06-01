@@ -78,7 +78,7 @@
 
 |Столбец 1|Столбец 2|
 |:-|-:|
-|<img src="https://github.com/elekpow/sflt-1/blob/main/вариант4.gif" alt="вариант4.gif" width="300">|<img src="https://github.com/elekpow/sflt-1/blob/main/вариант5.gif" alt="вариант5.gif" width="300">|
+|<img src="https://github.com/elekpow/sflt-1/blob/main/Вариант4.gif" alt="Вариант4.gif" width="300">|<img src="https://github.com/elekpow/sflt-1/blob/main/Вариант5.gif" alt="Вариант5.gif" width="300">|
 
 
 
