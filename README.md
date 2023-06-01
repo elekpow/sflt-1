@@ -28,44 +28,40 @@
 
 ### Выполнения задания 1
 
-конфигурируем маршрутизаторы
+конфигурируем маршрутизатор: Router1
 
-interface GigabitEthernet0/0
-  ip address 192.168.0.2 255.255.255.0
-  standby version 2
-  standby 0 ip 192.168.0.1
-  standby 0 priority 105
-  standby 0 authentication passkey
-
-
-interface GigabitEthernet0/1
-  ip address 192.168.1.2 255.255.255.0
-  standby version 2
-  standby 1 ip 192.168.1.1
-  standby 1 priority 50
-  standby 1 authentication passkey
-
------------------------------------------------------
-
-
-standby 1 preempt — задаем режим приемтинга
-
-
-interface GigabitEthernet0/0
-  ip address 192.168.0.3 255.255.255.0
-  standby version 2
-  standby 0 ip 192.168.0.1
-  standby 0 priority 105
-  standby 0 authentication passkey
-
-
-interface GigabitEthernet0/1
-  ip address 192.168.1.3 255.255.255.0
-  standby version 2
-  standby 1 ip 192.168.1.1
-  standby 1 priority 105
-  standby 1 authentication passkey
+  enable
+  configure terminal
   
+проверяем текущую конфигурацию командой 
+  do show running-config
+  do show standby brief
+настраиваем интерфейс
+  interface GigabitEthernet0/1
+выставляем приоритет 
+  standby 1 priority 105  
+  standby 1 preempt
+  standby 1 track GigabitEthernet 0/0
+
+конфигурируем маршрутизатор: Router1
+
+проверяем текущую конфигурацию командой 
+  do show running-config
+  do show standby brief
+настраиваем интерфейс
+  interface GigabitEthernet0/1
+выставляем приоритет 
+  standby 1 preempt
+  standby 1 track GigabitEthernet 0/0
+
+***Схема Cisco Packet Tracer
+
+[схема](https://github.com/elekpow/sflt-1/blob/main/hsrp_advanced.pkt)
+
+
+ ![screen1](https://github.com/elekpow/hw-04/blob/main/Grafana.JPG)  
+
+<img src="/images/cat.jpg" alt="Котик" width="200">
 
 
 
