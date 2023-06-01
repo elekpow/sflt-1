@@ -70,10 +70,12 @@
 [Схема решения](https://github.com/elekpow/sflt-1/blob/main/hsrp_advanced.pkt)
 
 
+|Столбец 1|
+|:-:|
+|<img src="https://github.com/elekpow/sflt-1/blob/main/вариант1.gif" alt="вариант1.gif" width="300">|
 
 |Столбец 1|Столбец 2|
 |:-|-:|
-|<img src="https://github.com/elekpow/sflt-1/blob/main/вариант1.gif" alt="вариант1.gif" width="300">|
 |<img src="https://github.com/elekpow/sflt-1/blob/main/вариант2.gif" alt="вариант2.gif" width="300">|<img src="https://github.com/elekpow/sflt-1/blob/main/вариант3.gif" alt="вариант3.gif" width="300">|
 
 |Столбец 1|Столбец 2|
