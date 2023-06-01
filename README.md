@@ -59,7 +59,7 @@
 [схема](https://github.com/elekpow/sflt-1/blob/main/hsrp_advanced.pkt)
 
 
- ![вариант1.gif](<img src="https://github.com/elekpow/sflt-1/blob/main/вариант1.gif" alt="вариант1.gif" width="200">)
+ ![вариант1.gif]<img src="https://github.com/elekpow/sflt-1/blob/main/вариант1.gif" alt="вариант1.gif" width="200">
 
 
 
