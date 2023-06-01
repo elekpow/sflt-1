@@ -67,8 +67,10 @@
 ```
 
 
+
 [Схема решения](https://github.com/elekpow/sflt-1/blob/main/hsrp_advanced.pkt)
 
+***при разрыве одно из линий, второму маршрутизатору присваевается роль активного маршрутизатора 
 
 |Вариант 1|
 |:-:|
@@ -81,6 +83,9 @@
 |Вариант 4|Вариант 5|
 |:-|-:|
 |<img src="https://github.com/elekpow/sflt-1/blob/main/Вариант4.gif" alt="Вариант4.gif" width="300">|<img src="https://github.com/elekpow/sflt-1/blob/main/Вариант5.gif" alt="Вариант5.gif" width="300">|
+
+
+
 
 
 
