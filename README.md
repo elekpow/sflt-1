@@ -59,9 +59,7 @@
 [схема](https://github.com/elekpow/sflt-1/blob/main/hsrp_advanced.pkt)
 
 
- ![screen1](https://github.com/elekpow/hw-04/blob/main/Grafana.JPG)  
-
-<img src="/images/cat.jpg" alt="Котик" width="200">
+ ![вариант1.gif](<img src="https://github.com/elekpow/sflt-1/blob/main/вариант1.gif" alt="вариант1.gif" width="200">)
 
 
 
