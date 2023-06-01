@@ -28,35 +28,46 @@
 
 ### Выполнения задания 1
 
-конфигурируем маршрутизатор: Router1
 
+конфигурируем маршрутизатор: Router1
+```
   enable
   configure terminal
-  
+```  
 проверяем текущую конфигурацию командой 
+```
   do show running-config
   do show standby brief
+```
 настраиваем интерфейс
+```
   interface GigabitEthernet0/1
+```
 выставляем приоритет 
+```
   standby 1 priority 105  
   standby 1 preempt
   standby 1 track GigabitEthernet 0/0
-
+```
 конфигурируем маршрутизатор: Router1
 
 проверяем текущую конфигурацию командой 
+```
   do show running-config
   do show standby brief
+```
 настраиваем интерфейс
+```
   interface GigabitEthernet0/1
+```
 выставляем приоритет 
+```
   standby 1 preempt
   standby 1 track GigabitEthernet 0/0
+```
 
-***Схема Cisco Packet Tracer
 
-[схема](https://github.com/elekpow/sflt-1/blob/main/hsrp_advanced.pkt)
+[Схема решения](https://github.com/elekpow/sflt-1/blob/main/hsrp_advanced.pkt)
 
 
 <img src="https://github.com/elekpow/sflt-1/blob/main/вариант1.gif" alt="вариант1.gif" width="400">
