@@ -68,7 +68,7 @@
 
 
 
-[Схема решения](https://github.com/elekpow/sflt-1/blob/main/sflt-1/hsrp_advanced.pkt)
+[Схема решения](https://github.com/elekpow/sflt-1/blob/main/sflt-1/hsrp_advanced1.pkt)
 
 #### при разрыве одно из линий, второму маршрутизатору присваевается роль активного маршрутизатора 
 
