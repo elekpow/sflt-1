@@ -12,13 +12,13 @@
 1. Установлена программа Cisco Packet Tracer
 2. Установлена операционная система Ubuntu на виртуальную машину и имеется доступ к терминалу
 3. Сделан клон этой виртуальной машины, они находятся в одной подсети и имеют разные IP адреса
-4. Просмотрены конфигурационные файлы, рассматриваемые на лекции, которые находятся по [ссылке](https://github.com/netology-code/sflt-homeworks/blob/main/1)
+4. Просмотрены конфигурационные файлы, рассматриваемые на лекции, которые находятся по [ссылке](https://github.com/netology-code/sflt-homeworks/blob/main/sflt-1/1)
 
 ---
 
 ### Задание 1
 
-- Дана [схема](https://github.com/netology-code/sflt-homeworks/blob/main/1/hsrp_advanced.pkt) для Cisco Packet Tracer, рассматриваемая в лекции.
+- Дана [схема](https://github.com/netology-code/sflt-homeworks/blob/main/sflt-1/1/hsrp_advanced.pkt) для Cisco Packet Tracer, рассматриваемая в лекции.
 - На данной схеме уже настроено отслеживание интерфейсов маршрутизаторов Gi0/1 (для нулевой группы)
 - Необходимо аналогично настроить отслеживание состояния интерфейсов Gi0/0 (для первой группы).
 - Для проверки корректности настройки, разорвите один из кабелей между одним из маршрутизаторов и Switch0 и запустите ping между PC0 и Server0.
@@ -68,21 +68,21 @@
 
 
 
-[Схема решения](https://github.com/elekpow/sflt-1/blob/main/hsrp_advanced.pkt)
+[Схема решения](https://github.com/elekpow/sflt-1/blob/main/sflt-1/sflt-1/hsrp_advanced.pkt)
 
 #### при разрыве одно из линий, второму маршрутизатору присваевается роль активного маршрутизатора 
 
 |Вариант 1|
 |:-:|
-|<img src="https://github.com/elekpow/sflt-1/blob/main/вариант1.gif" alt="вариант1.gif" width="300">|
+|<img src="https://github.com/elekpow/sflt-1/blob/main/sflt-1/вариант1.gif" alt="вариант1.gif" width="300">|
 
 |Вариант 2|Вариант 3|
 |:-|-:|
-|<img src="https://github.com/elekpow/sflt-1/blob/main/вариант2.gif" alt="вариант2.gif" width="300">|<img src="https://github.com/elekpow/sflt-1/blob/main/вариант3.gif" alt="вариант3.gif" width="300">|
+|<img src="https://github.com/elekpow/sflt-1/blob/main/sflt-1/вариант2.gif" alt="вариант2.gif" width="300">|<img src="https://github.com/elekpow/sflt-1/blob/main/sflt-1/вариант3.gif" alt="вариант3.gif" width="300">|
 
 |Вариант 4|Вариант 5|
 |:-|-:|
-|<img src="https://github.com/elekpow/sflt-1/blob/main/Вариант4.gif" alt="Вариант4.gif" width="300">|<img src="https://github.com/elekpow/sflt-1/blob/main/Вариант5.gif" alt="Вариант5.gif" width="300">|
+|<img src="https://github.com/elekpow/sflt-1/blob/main/sflt-1/Вариант4.gif" alt="Вариант4.gif" width="300">|<img src="https://github.com/elekpow/sflt-1/blob/main/sflt-1/Вариант5.gif" alt="Вариант5.gif" width="300">|
 
 
 
@@ -93,7 +93,7 @@
 
 ### Задание 2
 
-- Запустите две виртуальные машины Linux, установите и настройте сервис Keepalived как в лекции, используя пример конфигурационного [файла](https://github.com/netology-code/sflt-homeworks/blob/main/1/keepalived-simple.conf).
+- Запустите две виртуальные машины Linux, установите и настройте сервис Keepalived как в лекции, используя пример конфигурационного [файла](https://github.com/netology-code/sflt-homeworks/blob/main/sflt-1/1/keepalived-simple.conf).
 - Настройте любой веб-сервер (например, nginx или simple python server) на двух виртуальных машинах
 - Напишите Bash-скрипт, который будет проверять доступность порта данного веб-сервера и существование файла index.html в root-директории данного веб-сервера.
 - Настройте Keepalived так, чтобы он запускал данный скрипт каждые 3 секунды и переносил виртуальный IP на другой сервер, если bash-скрипт завершался с кодом, отличным от нуля (то есть порт веб-сервера был недоступен или отсутствовал index.html). Используйте для этого секцию vrrp_script
@@ -103,7 +103,7 @@
 
 Создаю две виртуальные машины Linux
 
- ![Virtualbox](https://github.com/elekpow/sflt-1/blob/main/Virtualbox.JPG)  
+ ![Virtualbox](https://github.com/elekpow/sflt-1/blob/main/sflt-1/Virtualbox.JPG)  
 
 
 
@@ -172,26 +172,26 @@ fi
 
 Состояние сервиса keepalived на сервере (Master)
 
- ![server_master](https://github.com/elekpow/sflt-1/blob/main/server_master.JPG)  
+ ![server_master](https://github.com/elekpow/sflt-1/blob/main/sflt-1/server_master.JPG)  
   
  При остановке сервера или при отсутсвии файла index.html 
 
- ![server_master_state](https://github.com/elekpow/sflt-1/blob/main/server_master_state.JPG)
+ ![server_master_state](https://github.com/elekpow/sflt-1/blob/main/sflt-1/server_master_state.JPG)
  
  Web страница
- ![Nginx_server_2](https://github.com/elekpow/sflt-1/blob/main/Nginx_server_2.JPG)
+ ![Nginx_server_2](https://github.com/elekpow/sflt-1/blob/main/sflt-1/Nginx_server_2.JPG)
  
  Состояние сервиса keepalived на втором серевере (Backup)
  
-  ![server_backup](https://github.com/elekpow/sflt-1/blob/main/server_backup.JPG)
+  ![server_backup](https://github.com/elekpow/sflt-1/blob/main/sflt-1/server_backup.JPG)
  
   
 При возобновлении работы сервера и при наличии файла index.html 
  
-  ![server_master_state_m](https://github.com/elekpow/sflt-1/blob/main/server_master_state_m.JPG)
+  ![server_master_state_m](https://github.com/elekpow/sflt-1/blob/main/sflt-1/server_master_state_m.JPG)
 
  Web страница
  
-  ![Nginx_serve](https://github.com/elekpow/sflt-1/blob/main/Nginx_server.JPG)
+  ![Nginx_serve](https://github.com/elekpow/sflt-1/blob/main/sflt-1/Nginx_server.JPG)
 
 
