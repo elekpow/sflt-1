@@ -105,9 +105,6 @@
 
  ![Virtualbox](https://github.com/elekpow/sflt-1/blob/main/Virtualbox.JPG)  
 
-На установленом веб-сервере Nginx, веб страница отображает ip-адрес сервера.
-
-виртуальный ip-адрес 192.168.56.15
 
 для выполения условия проверки наличия файла index.html и доступности сервера по порту 80 применен простой скрипт:
 
@@ -167,7 +164,10 @@ vrrp_instance VI_1 {
 
 ```
 
-Состояние сервиса keepalived ена сервере (Master)
+Запущен Веб-сервер Nginx, доступен на виртуальном ip-адресе 192.168.56.15
+
+
+Состояние сервиса keepalived на сервере (Master)
 
  ![server_master](https://github.com/elekpow/sflt-1/blob/main/server_master.JPG)  
   
