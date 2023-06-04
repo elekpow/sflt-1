@@ -101,6 +101,92 @@
 
 ### Выполнения задания 2
 
+Создаю две виртуальные машины Linux
+
+ ![Virtualbox](https://github.com/elekpow/sflt-1/blob/main/Virtualbox.JPG)  
+
+На установленом веб-сервере Nginx, веб страница отображает ip-адрес сервера.
+
+виртуальный ip-адрес 192.168.56.15
+
+для выполения условия проверки наличия файла index.html и доступности сервера по порту 80 применен простой скрипт:
+
+```
+#!/bin/bash
+
+FILE="/var/www/html/index.html"
+PORT="80"
+
+# netstat
+if ! [ -x "$(command -v netstat)" ]; then
+  echo 'netstat is not installed.' >&2
+  exit 1
+fi
+
+# check port
+if netstat -tuln | grep ":$PORT " > /dev/null; then
+  if [ -e "$FILE" ]; then exit 0  # "0"
+  else exit 1 # "1" "Port 80 is open, File \"index.html\" does not exist"
+  fi
+else
+  if [ -e "$FILE" ]; then exit 1  # "1" "Port 80 is closed, File \"index.html\" exists"
+  else exit 1 # "1" Port 80 is closed, File \"index.html\" does not exist"
+  fi
+fi
+
+```
+
+конфигурационный файл keepalived.conf
+
+```
+global_defs {
+    script_user root
+    enable_script_security
+}
+
+vrrp_script check_srv {
+    script "/etc/keepalived/scripts/check_testsrv.sh"
+    interval 3
+}
+
+vrrp_instance VI_1 {
+        state MASTER
+        interface enp0s3
+        virtual_router_id 15
+        priority 100
+        advert_int 1
+
+        virtual_ipaddress {
+                192.168.56.15/24
+        }
+
+        track_script {
+           check_srv
+        }
+}
+
+```
+
+Состояние сервиса keepalived ена сервере (Master)
+
+ ![server_master](https://github.com/elekpow/sflt-1/blob/main/server_master.JPG)  
+  
+ При остановке сервера или при отсутсвии файла index.html 
+
+ ![server_master_state](https://github.com/elekpow/sflt-1/blob/main/server_master_state.JPG)
+ 
+ Состояние сервиса keepalived на втором серевере (Backup)
+ 
+  ![server_backup](https://github.com/elekpow/sflt-1/blob/main/server_backup.JPG)
+ 
+  
+При возобновлении работы сервера и при наличии файла index.html 
+ 
+  ![server_master_state_m](https://github.com/elekpow/sflt-1/blob/main/server_master_state_m.JPG)
+
+
+
+
  ---
 
 ### Задание 3 *
