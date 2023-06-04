@@ -106,32 +106,6 @@
  ![Virtualbox](https://github.com/elekpow/sflt-1/blob/main/Virtualbox.JPG)  
 
 
-для выполения условия проверки наличия файла index.html и доступности сервера по порту 80 применен простой скрипт:
-
-```
-#!/bin/bash
-
-FILE="/var/www/html/index.html"
-PORT="80"
-
-# netstat
-if ! [ -x "$(command -v netstat)" ]; then
-  echo 'netstat is not installed.' >&2
-  exit 1
-fi
-
-# check port
-if netstat -tuln | grep ":$PORT " > /dev/null; then
-  if [ -e "$FILE" ]; then exit 0  # "0"
-  else exit 1 # "1" "Port 80 is open, File \"index.html\" does not exist"
-  fi
-else
-  if [ -e "$FILE" ]; then exit 1  # "1" "Port 80 is closed, File \"index.html\" exists"
-  else exit 1 # "1" Port 80 is closed, File \"index.html\" does not exist"
-  fi
-fi
-
-```
 
 конфигурационный файл keepalived.conf
 
@@ -164,7 +138,36 @@ vrrp_instance VI_1 {
 
 ```
 
-Запущен Веб-сервер Nginx, доступен на виртуальном ip-адресе 192.168.56.15
+
+для выполения условия проверки наличия файла index.html и доступности сервера на 80 порту примене скрипт:
+
+```
+#!/bin/bash
+
+FILE="/var/www/html/index.html"
+PORT="80"
+
+# netstat
+if ! [ -x "$(command -v netstat)" ]; then
+  echo 'netstat is not installed.' >&2
+  exit 1
+fi
+
+# check port
+if netstat -tuln | grep ":$PORT " > /dev/null; then
+  if [ -e "$FILE" ]; then exit 0  # "0"
+  else exit 1 # "1" "Port 80 is open, File \"index.html\" does not exist"
+  fi
+else
+  if [ -e "$FILE" ]; then exit 1  # "1" "Port 80 is closed, File \"index.html\" exists"
+  else exit 1 # "1" Port 80 is closed, File \"index.html\" does not exist"
+  fi
+fi
+
+```
+
+
+Веб-сервер Nginx, доступен на виртуальном ip-адресе 192.168.56.15
 
 
 Состояние сервиса keepalived на сервере (Master)
@@ -191,22 +194,4 @@ vrrp_instance VI_1 {
  
   ![Nginx_serve](https://github.com/elekpow/sflt-1/blob/main/Nginx_server.JPG)
 
-
-
-
-
- ---
-
-### Задание 3 *
-
-- Изучите дополнительно возможность Keepalived, которая называется vrrp_track_file
-- Напишите bash-скрипт, который будет менять приоритет внутри файла в зависимости от нагрузки на виртуальную машину (можно разместить данный скрипт в cron и запускать каждую минуту). Рассчитывать приоритет можно, например, на основании Load average.
-- Настройте Keepalived на отслеживание данного файла.
-- Нагрузите одну из виртуальных машин, которая находится в состоянии MASTER и имеет активный виртуальный IP и проверьте, чтобы через некоторое время она перешла в состояние SLAVE из-за высокой нагрузки и виртуальный IP переехал на другой, менее нагруженный сервер.
-- Попробуйте выполнить настройку keepalived на третьем сервере и скорректировать при необходимости формулу так, чтобы плавающий ip адрес всегда был прикреплен к серверу, имеющему наименьшую нагрузку.
-- На проверку отправьте получившийся bash-скрипт и конфигурационный файл keepalived, а также скриншоты логов keepalived с серверов при разных нагрузках
-
- ---
-
-### Выполнения задания 3
 
