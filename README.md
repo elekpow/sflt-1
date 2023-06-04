@@ -175,6 +175,9 @@ vrrp_instance VI_1 {
 
  ![server_master_state](https://github.com/elekpow/sflt-1/blob/main/server_master_state.JPG)
  
+ Web страница
+ ![Nginx_server_2](https://github.com/elekpow/sflt-1/blob/main/Nginx_server_2.JPG)
+ 
  Состояние сервиса keepalived на втором серевере (Backup)
  
   ![server_backup](https://github.com/elekpow/sflt-1/blob/main/server_backup.JPG)
@@ -183,6 +186,11 @@ vrrp_instance VI_1 {
 При возобновлении работы сервера и при наличии файла index.html 
  
   ![server_master_state_m](https://github.com/elekpow/sflt-1/blob/main/server_master_state_m.JPG)
+
+ Web страница
+ 
+  ![Nginx_serve](https://github.com/elekpow/sflt-1/blob/main/Nginx_server.JPG)
+
 
 
 
